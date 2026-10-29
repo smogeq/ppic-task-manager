@@ -1,0 +1,25 @@
+# Activity 8: on every push to main, build the Docker image and run it.
+name: CI Workflow - Docker
+
+on:
+  push:
+    branches: [ main ]
+
+# The container pushes the updated index.html back to main.
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # The slides use actions/checkout@v2, which is outdated. v4 still stores
+      # the push credentials inside .git/config, which the container relies on.
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build the Docker image
+        run: docker build -t task-manager:latest .
+
+      - name: Run the Docker image
+        run: docker run --rm -e GITHUB_USER="${{ github.actor }}" task-manager:latest
