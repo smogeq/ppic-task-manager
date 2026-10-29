@@ -1,0 +1,4 @@
+# Keep Linux line endings on scripts, even when edited on Windows.
+*.sh text eol=lf
+*.py text eol=lf
+Dockerfile text eol=lf

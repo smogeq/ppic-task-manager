@@ -1,0 +1,3 @@
+# Python's compiled-file cache, created when you run the scripts locally
+__pycache__/
+*.pyc
