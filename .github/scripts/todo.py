@@ -28,7 +28,7 @@ class TaskPool:
             Task("Set up the repository"),
             Task("Write todo.py"),
             Task("Write the unit tests"),
-            Task("Write the Dockerfile"),
+            Task("Write and test the Dockerfile"),
             Task("Configure ci.yml"),
             Task("Automate the project board"),
         ]
